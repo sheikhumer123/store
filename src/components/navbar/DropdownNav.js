@@ -1,4 +1,4 @@
-import "../components/navbar.css";
+import "../navbar/navbar.css";
 
 const DropdownNav = (props) => {
   return (

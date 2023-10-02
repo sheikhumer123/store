@@ -1,0 +1,73 @@
+.test {
+  background-color: red;
+  height: 60px;
+}
+
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown > .dropdown-toggle:active {
+  pointer-events: none;
+}
+.brand_responsive {
+  display: block;
+}
+.responsiveForm {
+  display: none;
+}
+.navWidth {
+  width: 85%;
+}
+.navContainer {
+  display: flex;
+  justify-content: center;
+  padding: 5px 0px;
+  box-shadow: -2px 6px 10px -7px rgba(176, 176, 176, 0.75);
+  -webkit-box-shadow: -2px 6px 10px -7px rgba(176, 176, 176, 0.75);
+  -moz-box-shadow: -2px 6px 10px -7px rgba(176, 176, 176, 0.75);
+}
+.navRightSection {
+  width: 200px;
+
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 990px) {
+  .brand {
+    display: none;
+  }
+  .responsiveForm {
+    display: block;
+  }
+  .responsiveForm2 {
+    display: none;
+  }
+  .navWidth {
+    width: 100%;
+  }
+  .sideBar {
+    position: absolute;
+    left: 0;
+    height: 100vh;
+    width: 400px;
+    background-color: red;
+  }
+  .navbar-collapse {
+    background-color: red;
+    width: 300px !important;
+    max-height: none; /* Remove the max-height property */
+    height: auto; /* Set the height property to auto */
+    transition: transform 0.2s ease; /* Add a transition for smooth animation */
+    transform: translateX(
+      -50%
+    ); /* Initially translate the navbar off-screen to the left */
+  }
+
+  .navbar-collapse.show {
+    transform: translateX(
+      0
+    ); /* When the navbar is shown, translate it back to its original position */
+  }
+}

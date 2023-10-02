@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Template from "./templates/HeadFootTemp";
 import HomeScreen from "./screens/HomeScreen";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/navbar/Navbar";
 
 function App() {
   const paths = createBrowserRouter([
