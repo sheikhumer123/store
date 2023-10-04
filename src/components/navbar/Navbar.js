@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../../assets/pics/logo.webp";
+
 import "../navbar/navbar.css";
 import DropdownNav from "./DropdownNav";
 
@@ -8,21 +8,29 @@ import SearchIcon from "@mui/icons-material/Search";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import Logo from "../Logo";
 
 const Navbar = () => {
-  const [showNav, setShowNav] = useState(false);
-  const test = () => {
-    setShowNav(!showNav);
-  };
   const NavSideSection = () => {
     return (
       <>
         <div className="navRightSection">
-          <DarkModeIcon />
-          <SearchIcon />
-          <FavoriteBorderIcon />
-          <ShoppingCartIcon />
-          <AccountCircleIcon />
+          <i>
+            <DarkModeIcon />
+          </i>
+
+          <i>
+            <SearchIcon />
+          </i>
+          <i>
+            <FavoriteBorderIcon />
+          </i>
+          <i>
+            <ShoppingCartIcon />
+          </i>
+          <i>
+            <AccountCircleIcon />
+          </i>
         </div>
       </>
     );
@@ -66,10 +74,12 @@ const Navbar = () => {
   return (
     <>
       <div className="navContainer ">
-        <nav className="navbar navbar-expand-lg navbar-light navWidth">
-          <img className="brand" width={100} src={logo} />
+        <nav
+          style={{ padding: 0 }}
+          className="navbar navbar-expand-lg navbar-light navWidth"
+        >
+          <Logo />
           <button
-            onClick={test}
             className="navbar-toggler"
             type="button"
             data-toggle="collapse"
@@ -86,23 +96,31 @@ const Navbar = () => {
           <div className=" responsiveForm">
             <NavSideSection />
           </div>
-
           <div
             className="collapse navbar-collapse "
             id="navbarSupportedContent"
           >
             <ul className="navbar-nav mr-auto ml-3">
               {navLink.map((link, index) => (
-                <li
-                  onClick={link.onPress}
-                  onMouseEnter={link.enter}
-                  onMouseLeave={link.leave}
-                  key={index}
-                  className="nav-item active nav-link"
-                >
-                  {link.name}
-                  {link.drop}
-                </li>
+                <>
+                  <li
+                    style={{
+                      padding: "0px 10px",
+                      display: "flex",
+                      alignItems: "center",
+                      cursor: "pointer",
+                    }}
+                    onClick={link.onPress}
+                    onMouseEnter={link.enter}
+                    onMouseLeave={link.leave}
+                    key={index}
+                    className="nav-item active nav-link navLi "
+                  >
+                    {link.name}
+
+                    {link.drop}
+                  </li>
+                </>
               ))}
             </ul>
             <div className=" responsiveForm2">

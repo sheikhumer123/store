@@ -1,7 +1,9 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Template from "./templates/HeadFootTemp";
+
+//Screens
 import HomeScreen from "./screens/HomeScreen";
-import Navbar from "./components/navbar/Navbar";
+import Signup from "./screens/Signup";
 
 function App() {
   const paths = createBrowserRouter([
@@ -9,11 +11,14 @@ function App() {
       path: "/",
       element: <Template childern={<HomeScreen />} />,
     },
+    {
+      path: "signup",
+      element: <Template childern={<Signup />} />,
+    },
   ]);
   return (
     <div className="App">
-      {/* <RouterProvider router={paths} /> */}
-      <Navbar />
+      <RouterProvider router={paths} />
     </div>
   );
 }

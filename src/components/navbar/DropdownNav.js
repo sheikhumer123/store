@@ -3,17 +3,12 @@ import "../navbar/navbar.css";
 const DropdownNav = (props) => {
   return (
     <>
-      <li class=" dropdown">
-        <a
-          style={{ color: "black" }}
-          href="#"
-          role="button"
-          data-toggle="dropdown"
-          aria-expanded="false"
-        >
-          {props.name}
-        </a>
-        <ul class="dropdown-menu">{props.menu}</ul>
+      <li className="dropdown">
+        {props.name}
+
+        <ul style={{ marginLeft: -10 }} class="dropdown-menu">
+          {props.menu}
+        </ul>
       </li>
     </>
   );
